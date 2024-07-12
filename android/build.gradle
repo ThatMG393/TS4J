@@ -1,35 +1,35 @@
 plugins {
-    id 'com.android.application'
+	id 'com.android.application'
 }
 
 android {
 	namespace "com.thatmg393.android.ts4j"
-    compileSdk 33
+	compileSdk 33
 	buildToolsVersion '33.0.1'
 
-    defaultConfig {
-        applicationId "com.thatmg393.android.ts4j"
-        minSdk 24
-        targetSdk 33
-        versionCode 1449
-        versionName "1.4.4.9.x-B"
-    }
+	defaultConfig {
+		applicationId "com.thatmg393.android.ts4j"
+		minSdk 24
+		targetSdk 33
+		versionCode 1449
+		versionName "1.4.4.9.x-B"
+	}
 
-    buildTypes {
+	buildTypes {
 		debug {
 			minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 			signingConfig signingConfigs.debug
 		}
 	
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 			signingConfig signingConfigs.debug
-        }
-    }
-    
-    compileOptions {
+		}
+	}
+	
+	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_17
 		targetCompatibility JavaVersion.VERSION_17
 	}
@@ -41,12 +41,12 @@ android {
 
 dependencies {
 	implementation 'androidx.appcompat:appcompat:1.7.0-alpha02'
-    implementation 'androidx.preference:preference:1.2.1'
+	implementation 'androidx.preference:preference:1.2.1'
 	
 	implementation 'com.google.android.material:material:1.9.0'
 	
 	implementation platform('io.github.Rosemoe.sora-editor:bom:0.23.4-43e1706-SNAPSHOT')
-    implementation 'io.github.Rosemoe.sora-editor:editor'
+	implementation 'io.github.Rosemoe.sora-editor:editor'
 
 	implementation 'com.github.haroldadmin:WhatTheStack:1.0.0-alpha04'
 

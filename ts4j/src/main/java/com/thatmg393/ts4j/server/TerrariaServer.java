@@ -27,11 +27,11 @@ public class TerrariaServer {
 	@Getter
 	private boolean isRunning = false;
 	
-    public TerrariaServer(String worldPath) {
+	public TerrariaServer(String worldPath) {
 		this("0.0.0.0", 7777, 10, worldPath);
 	}
 
-    public TerrariaServer(int maxPlayers, String worldPath) {
+	public TerrariaServer(int maxPlayers, String worldPath) {
 		this("0.0.0.0", 7777, maxPlayers, worldPath);
 	}
 	
@@ -41,7 +41,7 @@ public class TerrariaServer {
 	
 	public TerrariaServer(String ip, int port, int maxPlayers, String worldPath) {
 		try {
-		    this.server = new MultiClientSocketServer<>(ip, port, maxPlayers) { };
+			this.server = new MultiClientSocketServer<>(ip, port, maxPlayers) { };
 		} catch (Exception e) {
 			LOGGER.severe("Error creating socket:");
 			LOGGER.severe(e.getMessage());
@@ -60,11 +60,11 @@ public class TerrariaServer {
 			}
 			
 			LOGGER.info("Loading world...");
-		    world = TerrariaWorldFactory.load(Paths.get(worldPath));
+			world = TerrariaWorldFactory.load(Paths.get(worldPath));
 			LOGGER.info("World has been loaded.");
 			
 			server.startServing();
-		    LOGGER.info("Server started on " + serverIP + ":" + serverPort);
+			LOGGER.info("Server started on " + serverIP + ":" + serverPort);
 			
 			isRunning = true;
 		} catch (IOException | AssertionError e) {
@@ -74,8 +74,8 @@ public class TerrariaServer {
 	
 	public void stop() {
 		try {
-		    LOGGER.info("Stopping server...");
-		    server.stopServer();
+			LOGGER.info("Stopping server...");
+			server.stopServer();
 			isRunning = false;
 		} catch (IOException e) {
 			LOGGER.info("Failed to stop server, force closing JVM >:)");

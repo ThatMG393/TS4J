@@ -7,14 +7,14 @@ import lombok.Getter;
 import java.util.ArrayList;
 
 public class WorldTiles {
-    @Getter
+	@Getter
 	private final ArrayList<Tile> tiles;
 			
-    public WorldTiles(ArrayList<Tile> tiles) {
+	public WorldTiles(ArrayList<Tile> tiles) {
 		this.tiles = tiles;
 	}
 
-    public Tile getTileAt(int index) {
+	public Tile getTileAt(int index) {
 		return tiles.get(index);
 	}
 }

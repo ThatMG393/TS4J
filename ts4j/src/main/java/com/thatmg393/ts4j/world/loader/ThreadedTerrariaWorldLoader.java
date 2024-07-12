@@ -53,11 +53,11 @@ import java.util.logging.Logger;
 public class ThreadedTerrariaWorldLoader implements BaseWorldLoader {
 	private static final Logger LOGGER = Logger.getLogger("ThreadedTerrariaWorldLoader");
 		
-    private BinaryReader reader;
+	private BinaryReader reader;
 
-    public ThreadedTerrariaWorldLoader(Path file) throws IOException {
-        this.reader = new BinaryReader(Files.newInputStream(file), "ISO-8859-1");
-    }
+	public ThreadedTerrariaWorldLoader(Path file) throws IOException {
+		this.reader = new BinaryReader(Files.newInputStream(file), "ISO-8859-1");
+	}
 	
 	private WorldMetadata constructMetadata() {
 		int version = reader.readInt32();
@@ -239,10 +239,10 @@ public class ThreadedTerrariaWorldLoader implements BaseWorldLoader {
 		);
 	}
 
-    @Override
-    public TerrariaWorld get() {
-        return new TerrariaWorld(
+	@Override
+	public TerrariaWorld get() {
+		return new TerrariaWorld(
 			constructMetadata(), constructProperties(), null
 		);
-    }
+	}
 }

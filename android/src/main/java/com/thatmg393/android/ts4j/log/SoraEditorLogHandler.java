@@ -13,22 +13,22 @@ public class SoraEditorLogHandler extends Handler {
 		this.view = view;
 	}
 		
-    @Override
-    public void publish(LogRecord logRecord) {
+	@Override
+	public void publish(LogRecord logRecord) {
 		if (!isLoggable(logRecord)) return;
 		view.post(() -> {
 			Content c = view.getText();
 			c.insert(c.getLineCount() - 1, 0, getFormatter().format(logRecord) + "\n");
 		});
-    }
+	}
 	
 	@Override
 	public void flush() {
 		// no-op
 	}
 
-    @Override
-    public void close() throws SecurityException {
-	    view.post(() -> view.release());
-    }
+	@Override
+	public void close() throws SecurityException {
+		view.post(() -> view.release());
+	}
 }

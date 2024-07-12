@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
 				binding.startTrServer.setText("Stop Terraria Server");
 				
 				if (ts.getWorld() != null) {
-				    WorldMetadata m = ts.getWorld().getMetadata();
-				    if (m != null) LOGGER.info(m.toString());
-				    
-				    WorldProperties p = ts.getWorld().getProperties();
-				    if (p != null) LOGGER.info(p.toString());
+					WorldMetadata m = ts.getWorld().getMetadata();
+					if (m != null) LOGGER.info(m.toString());
+					
+					WorldProperties p = ts.getWorld().getProperties();
+					if (p != null) LOGGER.info(p.toString());
 				}
 			}
 		});

@@ -1,29 +1,29 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id 'com.android.application' version '8.1.1' apply false
+	id 'com.android.application' version '8.1.1' apply false
 	id 'com.android.library' version '8.1.1' apply false
 	id 'com.github.gmazzo.buildconfig' version '5.4.0' apply false
 }
 
 project.ext {
-    java = [
-	    target:  JavaVersion.VERSION_17,
+	java = [
+		target:  JavaVersion.VERSION_17,
 		source:  JavaVersion.VERSION_17
 	]
 
-    dependencies = [
-	    versions: [
+	dependencies = [
+		versions: [
 			commons_lang:  "3.14.0",
-		    guava:         "33.2.1-android",
-		    lombok:        "1.18.32"
-	    ]
+			guava:		 "33.2.1-android",
+			lombok:		"1.18.32"
+		]
 	]
 	
 	ts4j = [
-	    target_game_version: "1.4.4.9",
-		build_type:          (System.getProperty("buildType") ?: "beta"),
+		target_game_version: "1.4.4.9",
+		build_type:		  (System.getProperty("buildType") ?: "beta"),
 		archive_base_name:   "ts4j",
-		maven_group:         "com.thatmg393.ts4j"
+		maven_group:		 "com.thatmg393.ts4j"
 	]
 	
 	ts4j.version_name = "${ts4j.target_game_version}-ts4j.${ts4j.build_type}"
@@ -31,5 +31,5 @@ project.ext {
 }
 
 task clean(type: Delete) {
-    delete rootProject.buildDir
+	delete rootProject.buildDir
 }

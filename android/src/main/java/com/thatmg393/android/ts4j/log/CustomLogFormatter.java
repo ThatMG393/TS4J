@@ -15,18 +15,18 @@ public class CustomLogFormatter extends Formatter {
 	private final Date date = new Date();
 	private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yy H:mm:ss zzz", Locale.getDefault());
 	
-    @Override
-    public String format(LogRecord logRecord) {
+	@Override
+	public String format(LogRecord logRecord) {
 		date.setTime(logRecord.getMillis());
 		
-        return ZonedDateTime.now(ZoneId.systemDefault()).format(dateFormatter) +
+		return ZonedDateTime.now(ZoneId.systemDefault()).format(dateFormatter) +
 		" " + logRecord.getLoggerName() +
 		":" + logRecord.getLevel().getLocalizedName() +
 		" | " + formatMessage(logRecord);
-    }
+	}
 
-    @Override
-    public String getHead(Handler handler) {
+	@Override
+	public String getHead(Handler handler) {
 		return "Using com.thatmg393.android.ts4j.log.CustomLogFormatter.java";
-    }
+	}
 }

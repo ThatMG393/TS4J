@@ -7,9 +7,9 @@ import lombok.ToString;
 @Getter
 @ToString
 public class BiomeBackgrounds {
-    private final int undergroundSnow;
-    private final int undergroundJungle;
-    private final int underworld;
+	private final int undergroundSnow;
+	private final int undergroundJungle;
+	private final int underworld;
 	
 	@Setter
 	private short forest;
@@ -35,9 +35,9 @@ public class BiomeBackgrounds {
 	@Setter
 	private short ocean;
 
-    public BiomeBackgrounds(int undergroundSnow, int undergroundJungle, int underworld) {
-        this.undergroundSnow = undergroundSnow;
-        this.undergroundJungle = undergroundJungle;
-        this.underworld = underworld;
-    }
+	public BiomeBackgrounds(int undergroundSnow, int undergroundJungle, int underworld) {
+		this.undergroundSnow = undergroundSnow;
+		this.undergroundJungle = undergroundJungle;
+		this.underworld = underworld;
+	}
 }

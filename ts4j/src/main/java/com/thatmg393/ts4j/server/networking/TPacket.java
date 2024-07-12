@@ -9,13 +9,13 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = false)
 @ToString
 public class TPacket extends BasePacket {
-    public final char length;
-    public final short type;
-    public final BinaryReader data;
+	public final char length;
+	public final short type;
+	public final BinaryReader data;
 
-    public TPacket(char length, short type, BinaryReader data) {
-        this.length = length;
-        this.type = type;
-        this.data = data;
-    }
+	public TPacket(char length, short type, BinaryReader data) {
+		this.length = length;
+		this.type = type;
+		this.data = data;
+	}
 }

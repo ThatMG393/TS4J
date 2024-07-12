@@ -66,15 +66,15 @@ public class MultiClientSocketServer<C extends BaseServerClient, P extends BaseP
 						LOGGER.info("Server pool is full, disconnecting client...");
 						
 						client.close();
-				    } else {
-					    serverThreadPool.execute(
-						    clientClass.getDeclaredConstructor(
-							    Socket.class, BasePacketParser.class
-						    ).newInstance(
-							    client.socket(), packetParser
-						    )
-					    );
-				    }
+					} else {
+						serverThreadPool.execute(
+							clientClass.getDeclaredConstructor(
+								Socket.class, BasePacketParser.class
+							).newInstance(
+								client.socket(), packetParser
+							)
+						);
+					}
 				} catch (ClosedByInterruptException e) {
 					LOGGER.info("java.nio.channels.ClosedByInterruptException! Socket server is probably being closed...");
 				} catch (Exception e) {

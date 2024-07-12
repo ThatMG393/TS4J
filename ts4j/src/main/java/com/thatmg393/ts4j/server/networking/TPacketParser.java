@@ -11,16 +11,16 @@ public class TPacketParser implements BasePacketParser<TPacket> {
 	private static final Logger LOGGER = Logger.getLogger("TPacketParser");
 	public static final int BUFFER_SIZE = 1024;
 	
-    @Override
-    public TPacket parse(InputStream dataStream) throws IOException {
+	@Override
+	public TPacket parse(InputStream dataStream) throws IOException {
 		int length = ensureNotEOS(dataStream.read());
 		int type = ensureNotEOS(dataStream.read()) & 0xFF;
 		byte[] payload = dataStream.readNBytes(length);
 		
 		LOGGER.info("L: " + length + ", T: " + type + ", D: " + new String(payload, Charset.forName("UTF-8")));
 		
-        return null;
-    }
+		return null;
+	}
 	
 	private int ensureNotEOS(int result) {
 		return (result == -1) ? result : result;

@@ -7,16 +7,16 @@ import lombok.ToString;
 @Getter
 @ToString
 public class DefeatedInvasions {
-    private final boolean goblinArmy;
-    private final boolean frostMoon;
-    private final boolean pirates;
+	private final boolean goblinArmy;
+	private final boolean frostMoon;
+	private final boolean pirates;
 	
 	@Setter
 	private boolean martianMadness;
 
-    public DefeatedInvasions(boolean goblinArmy, boolean frostMoon, boolean pirates) {
-        this.goblinArmy = goblinArmy;
-        this.frostMoon = frostMoon;
-        this.pirates = pirates;
-    }
+	public DefeatedInvasions(boolean goblinArmy, boolean frostMoon, boolean pirates) {
+		this.goblinArmy = goblinArmy;
+		this.frostMoon = frostMoon;
+		this.pirates = pirates;
+	}
 }

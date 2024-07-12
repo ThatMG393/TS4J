@@ -12,10 +12,10 @@ public class TServerClient extends BaseServerClient<TPacket> {
 		super(s, pp);
 	}
 	
-    @Override
-    public void onRecievePacket(TPacket packet) {
-        if (packet != null) {
+	@Override
+	public void onRecievePacket(TPacket packet) {
+		if (packet != null) {
 			System.out.println(packet);
 		}
-    }
+	}
 }

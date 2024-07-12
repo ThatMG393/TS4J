@@ -9,13 +9,13 @@ import lombok.ToString;
 @Getter
 @ToString
 public class WorldTileStyles {
-    private final MoonStyles moonStyle;
-    private final FourPartSplit treeStyles;
-    private final FourPartSplit mossStyles;
+	private final MoonStyles moonStyle;
+	private final FourPartSplit treeStyles;
+	private final FourPartSplit mossStyles;
 
 	public WorldTileStyles(MoonStyles moonStyle, FourPartSplit treeStyles, FourPartSplit mossStyles) {
-	    this.moonStyle = moonStyle;
-	    this.treeStyles = treeStyles;
-	    this.mossStyles = mossStyles;
+		this.moonStyle = moonStyle;
+		this.treeStyles = treeStyles;
+		this.mossStyles = mossStyles;
 	}
 }

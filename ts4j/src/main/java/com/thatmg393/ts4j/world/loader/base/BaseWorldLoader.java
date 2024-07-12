@@ -10,14 +10,14 @@ public interface BaseWorldLoader {
 	
 	public default <T> T runAndForgetException(Supplier<T> f) {
 		try {
-		    return f.get();
+			return f.get();
 		} catch (Exception e) {
 			Logger.getLogger("BaseWorldLoader").warning("Failed to execute lambda: " + e.getMessage());
 			return null;
 		}
 	}
 
-    public default <T> void assertOrLogNThrow(T newObj, T realObj, String reason) {
+	public default <T> void assertOrLogNThrow(T newObj, T realObj, String reason) {
 		if (newObj == null) return;
 		if (!newObj.equals(realObj)) {
 			Logger LOGGER = Logger.getLogger("BaseWorldLoader");

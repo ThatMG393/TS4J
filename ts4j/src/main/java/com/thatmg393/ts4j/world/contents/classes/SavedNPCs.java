@@ -7,27 +7,27 @@ import lombok.ToString;
 @Getter
 @ToString
 public class SavedNPCs {
-    private final boolean isGoblinTinkererSaved;
-    private final boolean isWizardSaved;
-    private final boolean isMechanicSaved;
+	private final boolean isGoblinTinkererSaved;
+	private final boolean isWizardSaved;
+	private final boolean isMechanicSaved;
 
-    @Setter private boolean isAnglerSaved;
+	@Setter private boolean isAnglerSaved;
 
-    @Setter private boolean isStylistSaved;
+	@Setter private boolean isStylistSaved;
 
-    @Setter private boolean isTaxCollectorSaved;
+	@Setter private boolean isTaxCollectorSaved;
 	
 	@Setter private boolean isGolferSaved;
 	
 	@Setter private boolean isBartenderSaved;
 
-    public SavedNPCs(
+	public SavedNPCs(
 		boolean isGoblinTinkererSaved,
 		boolean isWizardSaved,
 		boolean isMechanicSaved
 	) {
-        this.isGoblinTinkererSaved = isGoblinTinkererSaved;
-        this.isWizardSaved = isWizardSaved;
-        this.isMechanicSaved = isMechanicSaved;
-    }
+		this.isGoblinTinkererSaved = isGoblinTinkererSaved;
+		this.isWizardSaved = isWizardSaved;
+		this.isMechanicSaved = isMechanicSaved;
+	}
 }
