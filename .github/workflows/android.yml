@@ -13,17 +13,13 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        cache: 'gradle'
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
     - name: Build with Gradle
-      uses: burrunan/gradle-cache-action@v1
-      with:
-        arguments: |
-          --build-cache
-          assembleDebug
-          -Dbuild.type="beta"
+      run: ./gradlew --build-cache assembleDebug -Dbuild.type="beta"
 
     - name: Upload built APK
       uses: actions/upload-artifact@v4
