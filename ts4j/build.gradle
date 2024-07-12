@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+	id 'com.github.gmazzo.buildconfig'
+}
+
+base.archivesName = rootProject.ext.ts4j.archives_base_name
+group = rootProject.ext.ts4j.maven_group
+version = rootProject.ext.ts4j.version_name
+
+dependencies {
+    implementation "org.apache.commons:commons-lang3:${rootProject.ext.dependencies.versions.commons_lang}"
+	implementation "com.google.guava:guava:${rootProject.ext.dependencies.versions.guava}"
+	
+	compileOnly "org.projectlombok:lombok:${rootProject.ext.dependencies.versions.lombok}"
+    annotationProcessor "org.projectlombok:lombok:${rootProject.ext.dependencies.versions.lombok}"
+	
+	implementation fileTree(dir: "libs", include: ["*.jar"])
+}
+
+buildConfig {
+	buildConfigField(String, 'TS4J_VERSION', rootProject.ext.ts4j.version_name)
+	buildConfigField(String, 'TS4J_VERSION_CODE', rootProject.ext.ts4j.version_code)
+	buildConfigField(String, 'TS4J_BUILD_TYPE', rootProject.ext.ts4j.build_type)
+	buildConfigField(String, 'TS4J_SUPPORTED_TERRARIA_VERSION', rootProject.ext.ts4j.target_game_version)
+}
+
+java {
+    toolchain {
+	    languageVersion = JavaLanguageVersion.of(rootProject.ext.java.target.getMajorVersion().toInteger())
+	}
+}
