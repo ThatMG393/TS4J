@@ -31,5 +31,5 @@ java {
 }
 
 jar {
-    destinationDirectory = file("$buildDir/outputs/jar")
+    destinationDirectory = file("$buildDir/outputs/jar/${rootProject.ext.ts4j.build_type}")
 }
