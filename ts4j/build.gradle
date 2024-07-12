@@ -1,5 +1,5 @@
 plugins {
-	id 'java'
+	id 'java-library'
 	id 'com.github.gmazzo.buildconfig'
 }
 
@@ -28,4 +28,8 @@ java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(rootProject.ext.java.target.getMajorVersion().toInteger())
 	}
+}
+
+jar {
+    destinationDirectory = file("$buildDir/outputs/jar")
 }
