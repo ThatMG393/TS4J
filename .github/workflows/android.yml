@@ -1,0 +1,35 @@
+name: Android CI
+
+on:
+  [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
+    - name: Build with Gradle
+      uses: burrunan/gradle-cache-action@v1
+      with:
+        arguments: |
+          --build-cache
+          assembleDebug
+          -Dbuild.type="beta"
+
+    - name: Upload built APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: ts4j-beta
+        path: |
+          android/build/outputs/apk/debug/*.apk
+          ts4j/build/outputs/jar/debug/*.jar
+          
