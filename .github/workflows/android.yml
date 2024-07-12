@@ -27,5 +27,5 @@ jobs:
         name: ts4j-beta
         path: |
           android/build/outputs/apk/debug/*.apk
-          ts4j/build/outputs/jar/debug/*.jar
+          ts4j/build/outputs/jar/beta/*.jar
           
